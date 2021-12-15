@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %}Create{% endblock title %}
+{% block body %}
+<div class="container text-center border border-info rounded"style="margin-top:70px;">
+    <div class="jumbotron">
+      <h1 class="text-light">Create Your Own Blog</h1>      
+      <p class="text-light py-3">Put your thoughts into words and write something you can be proud of !</p>
+    </div>     
+</div>
+<div class="container  text-center border border-primary rounded" style="margin-top:70px;" >
+    <form  method="post"action="/create">
+        {% csrf_token %}
+        <label class="text-light py-2">Enter first name</label><br>  
+        <input type="text" class="my-1 text-center text-light bg-dark form-control input-sm" name="firstname" placeholder="Enter first name" style="border-width:0;"><br>  
+
+        <label class="text-light py-2">Enter last name</label><br>  
+        <input type="text" name="lastname" placeholder="Enter last name" class="text-center text-light bg-dark form-control input-sm" style="border-width:0;"><br>
+
+        <label class="text-light py-2">Enter Title of Blog</label><br>  
+        <input type="text" name="blogTitle" class="text-center text-light bg-dark form-control input-sm"placeholder="Enter Title" style="border-width:0;"><br>
+
+        <label class="text-light py-2">Enter Contents of Blog</label><br>
+        <textarea name="blog" class="text-light bg-dark form-control input-sm my-3" cols="30" rows="10"></textarea>
+
+        <button type="button" class="btn btn-outline-light my-2">Submit</button>
+    </form>
+</div>
+
+{% endblock body %}
